@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инструкция по счетчикам</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 15px 15px 0 0;
+        }
+        
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid;
+        }
+        
+        .electricity { border-left-color: #f39c12; }
+        .water { border-left-color: #3498db; }
+        
+        .card h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .example {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border: 1px solid #ddd;
+        }
+        
+        .numbers {
+            font-family: 'Courier New', monospace;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .black { color: #2c3e50; }
+        .red { color: #e74c3c; }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #ecf0f1;
+            border-radius: 0 0 15px 15px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📋 Инструкция по счетчикам</h1>
+            <p>Правила снятия показаний</p>
+        </div>
+        
+        <div class="content">
+            <div class="card electricity">
+                <h2>⚡ Электрический счетчик</h2>
+                <p><strong>Передавать:</strong> черные цифры (целые кВт⋅ч)</p>
+                <p><strong>Не передавать:</strong> красные цифры (доли кВт⋅ч)</p>
+                <div class="example">
+                    <strong>Пример:</strong>
+                    <div class="numbers">
+                        <span class="black">12345</span><span class="red">6</span>
+                    </div>
+                    <strong>Передаем:</strong> <span class="black">12345</span>
+                </div>
+            </div>
+            
+            <div class="card water">
+                <h2>💧 Водяной счетчик</h2>
+                <p><strong>Передавать:</strong> черные цифры до запятой (кубометры)</p>
+                <p><strong>Не передавать:</strong> красные цифры после запятой (литры)</p>
+                <div class="example">
+                    <strong>Пример:</strong>
+                    <div class="numbers">
+                        <span class="black">123</span>,<span class="red">456</span>
+                    </div>
+                    <strong>Передаем:</strong> <span class="black">123</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Адаптивно для телефонов и компьютеров
+        </div>
+    </div>
+</body>
+</html>
